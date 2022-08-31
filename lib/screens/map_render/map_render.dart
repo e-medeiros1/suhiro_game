@@ -10,15 +10,18 @@ class MapRender extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
+      cameraConfig: CameraConfig(
+        smoothCameraEnabled: true,
+        moveOnlyMapArea: true,
+      ),
       joystick: Joystick(
         directional: JoystickDirectional(
-          size: 100,
+          size: 150,
           isFixed: true,
         ),
       ),
       map: WorldMapByTiled('map/pacmap.json',
           forceTileSize: Vector2(tileSize, tileSize)),
-      lightingColorGame: Colors.black.withOpacity(0.15),
       player: GamePlayer(position: Vector2(25 * tileSize, 20 * tileSize)),
     );
   }
