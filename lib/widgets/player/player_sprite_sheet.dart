@@ -5,7 +5,7 @@ class PlayerSpriteSheet {
         'fHero_.png',
         SpriteAnimationData.sequenced(
           amount: 4,
-          stepTime: 0.1,
+          stepTime: 0.15,
           textureSize: Vector2(24, 24),
           texturePosition: Vector2(96, 0),
         ),
@@ -14,7 +14,7 @@ class PlayerSpriteSheet {
         'fHero_.png',
         SpriteAnimationData.sequenced(
           amount: 4,
-          stepTime: 0.1,
+          stepTime: 0.15,
           textureSize: Vector2(24, 24),
           texturePosition: Vector2(0, 0),
         ),
@@ -23,7 +23,7 @@ class PlayerSpriteSheet {
         'fHero_.png',
         SpriteAnimationData.sequenced(
           amount: 4,
-          stepTime: 0.1,
+          stepTime: 0.15,
           textureSize: Vector2(24, 24),
           texturePosition: Vector2(96, 48),
         ),
@@ -32,7 +32,7 @@ class PlayerSpriteSheet {
         'fHero_.png',
         SpriteAnimationData.sequenced(
           amount: 4,
-          stepTime: 0.1,
+          stepTime: 0.15,
           textureSize: Vector2(24, 24),
           texturePosition: Vector2(0, 48),
         ),
