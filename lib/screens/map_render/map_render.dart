@@ -15,7 +15,7 @@ class MapRender extends StatelessWidget {
       cameraConfig: CameraConfig(
         smoothCameraEnabled: true,
         moveOnlyMapArea: true,
-        zoom: 2.5,
+        zoom: 2.3,
         sizeMovementWindow: Vector2(
           tileSize * 3,
           tileSize * 3,
