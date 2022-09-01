@@ -17,6 +17,7 @@ class NecroEnemy extends SimpleEnemy with ObjectCollision {
             runLeft: NecroEnemySpriteSheet.enemyRunLeft,
           ),
         ) {
+//Seta colisão
     setupCollision(
       CollisionConfig(
         collisions: [
@@ -29,6 +30,7 @@ class NecroEnemy extends SimpleEnemy with ObjectCollision {
     );
   }
 
+//Ataca ao ver
   @override
   void update(double dt) {
     seeAndMoveToPlayer(

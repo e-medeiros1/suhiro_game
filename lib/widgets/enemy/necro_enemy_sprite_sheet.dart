@@ -25,7 +25,7 @@ class NecroEnemySpriteSheet {
           amount: 4,
           stepTime: 0.15,
           textureSize: Vector2(24, 24),
-          texturePosition: Vector2(96, 48),
+          texturePosition: Vector2(96, 24),
         ),
       );
   static Future<SpriteAnimation> get enemyRunRight => SpriteAnimation.load(
@@ -34,7 +34,7 @@ class NecroEnemySpriteSheet {
           amount: 4,
           stepTime: 0.15,
           textureSize: Vector2(24, 24),
-          texturePosition: Vector2(0, 48),
+          texturePosition: Vector2(0, 24),
         ),
       );
 }
