@@ -162,7 +162,7 @@
                  "rotation":0,
                  "visible":true,
                  "width":16,
-                 "x":254.75,
+                 "x":253.75,
                  "y":116.75
                 }, 
                 {
@@ -186,6 +186,61 @@
                  "width":16,
                  "x":115.5,
                  "y":297.5
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":3,
+                 "name":"bonfire",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":159.5,
+                 "y":159.5
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":4,
+                 "name":"bonfire",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":303.5,
+                 "y":303
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":5,
+                 "name":"bonfire",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":448,
+                 "y":288.5
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":6,
+                 "name":"bonfire",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":495.5,
+                 "y":208
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":7,
+                 "name":"bonfire",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":272.5,
+                 "y":110.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -194,7 +249,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":3,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.1",
