@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:pacman_game/utils/basic_values.dart';
+import 'package:pacman_game/widgets/decoration/bonfire.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
 import 'package:pacman_game/widgets/player/player.dart';
 
@@ -36,11 +37,15 @@ class MapRender extends StatelessWidget {
           'necro': (properties) => NecroEnemy(
                 position: properties.position,
               ),
+          'bonfire': (properties) => Lamp(
+                position: properties.position,
+              ),
         },
       ),
       player: GamePlayer(
         position: Vector2(25 * tileSize, 20 * tileSize),
       ),
+      lightingColorGame: Colors.black.withOpacity(0.15),
     );
   }
 }
