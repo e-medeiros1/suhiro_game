@@ -16,13 +16,20 @@ class Board extends GameDecoration with TapGesture {
         [
           Say(
             text: [
-              const TextSpan(text: 'Olá! Bem vindo ao meu jogo!\n'),
-              const TextSpan(text: 'Colete todas as moedas para vencer.\n'),
+              const TextSpan(
+                  text: 'Olá! Bem vindo ao meu jogo!\n',
+                  style: TextStyle(fontFamily: 'PressStart2P')),
+              const TextSpan(
+                  text:
+                      'Colete todos os tesouros do mapa enquanto luta contra monstros.\n',
+                  style: TextStyle(fontFamily: 'PressStart2P')),
             ],
           ),
           Say(
             text: [
-              const TextSpan(text: 'Boa sorte! Você vai precisar...'),
+              const TextSpan(
+                  text: 'Boa sorte! Você vai precisar...',
+                  style: TextStyle(fontFamily: 'PressStart2P')),
             ],
           ),
         ],
