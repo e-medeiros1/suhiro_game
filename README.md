@@ -10,7 +10,21 @@
 
 <p>
       <img src="https://user-images.githubusercontent.com/73318684/187816611-3576ec3d-6dc5-4621-841d-ec7966adc49d.png" width="750" alt="Resultado"/>
+</p>
+
+<h2> Dia 2 </h2>
+<p >
+  <h4>Resumo:</h4>
+  Adciona animações de morte e cova, iluminação na bonfire e novos inimigos</br>  
+  Set nas ações ataque do inimigo</br>
 </p>  
+
+<h2> Resultado </h2>  
+
+<p>
+      <img src="https://user-images.githubusercontent.com/73318684/188041632-d2cd1b60-dbe8-4669-bb83-45daf226ab4e.png" width="750" alt="Resultado"/>
+</p>  
+
 
 
 
