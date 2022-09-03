@@ -13,7 +13,13 @@
       <img src="https://user-images.githubusercontent.com/73318684/188285170-11dc6080-0b17-4da6-a34f-b7405b16fea1.jpg" width="550" alt="Resultado"/>
 </p>
 
+<h2> Versão demo do Android </h2>  
 
+[Suhiro.zip](https://github.com/e-medeiros1/suhiro_game/files/9483289/Suhiro.zip)
+
+<h2> Versão demo do Desktop </h2>  
+
+<p> Em breve... </p>
 
 <h3> Instruções e dicas </h3>
 
