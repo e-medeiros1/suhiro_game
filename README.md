@@ -9,15 +9,11 @@
       <img src="https://user-images.githubusercontent.com/73318684/188285113-eeaacf95-604b-48f9-9196-091dcfe47ae3.jpg" width="650" alt="Resultado"/>
 </p>
 
-<p align="center">
-      <img src="https://user-images.githubusercontent.com/73318684/188285170-11dc6080-0b17-4da6-a34f-b7405b16fea1.jpg" width="550" alt="Resultado"/>
-</p>
-
-<h2> Versão demo do Android </h2>  
+<h2> Versão demo Android </h2>  
 
 [Suhiro.zip](https://github.com/e-medeiros1/suhiro_game/files/9483289/Suhiro.zip)
 
-<h2> Versão demo do Desktop </h2>  
+<h2> Versão demo Desktop </h2>  
 
 <p> Em breve... </p>
 
