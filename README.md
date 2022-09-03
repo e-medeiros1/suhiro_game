@@ -1,5 +1,22 @@
 <h2 align="center"> Seleção de Desenvolvedor de Software - Escribo - Teste técnico 02 </h2>  
 
+
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/73318684/188285028-390f20b4-50af-4875-a4c9-60823854d50e.jpg" width="550" alt="Resultado"/>
+</p>
+
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/73318684/188285113-eeaacf95-604b-48f9-9196-091dcfe47ae3.jpg" width="650" alt="Resultado"/>
+</p>
+
+<h2> Versão demo Android </h2>  
+
+[Suhiro.zip](https://github.com/e-medeiros1/suhiro_game/files/9483289/Suhiro.zip)
+
+<h2> Versão demo Desktop </h2>  
+
+<p> Em breve... </p>
+
 <h3> Instruções e dicas </h3>
 
 Pegue 30 moedas e mate todos os inimigos para vencer  
@@ -66,8 +83,9 @@ Pegue 30 moedas e mate todos os inimigos para vencer
    $ git clone https://github.com/e-medeiros1/suhiro_game.git 
    - Entre no diretório com:
    $ cd .\suhiro_game
-   - Rode os seguintes comando antes: 
-   $ flutter clean  
+   - Vá para o VSCode com: 
+   $ code .
+   - Obtenha os packages:
    $ flutter pub get  
    - Finalmente rode o jogo no dispositivo desejado:
    $ flutter run  
