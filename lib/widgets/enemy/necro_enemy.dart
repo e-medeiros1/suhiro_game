@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
 import 'package:pacman_game/utils/basic_values.dart';
 import 'package:pacman_game/widgets/coins/coins.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy_sprite_sheet.dart';
@@ -33,6 +34,24 @@ class NecroEnemy extends SimpleEnemy
     );
   }
 
+//Life bar
+  @override
+  void render(Canvas canvas) {
+    drawDefaultLifeBar(
+      canvas,
+      width: 10,
+      borderWidth: 1,
+      height: 1.5,
+      align: const Offset(3, -5),
+      borderRadius: BorderRadius.circular(3),
+      borderColor: Colors.black87,
+      colorsLife: [
+        Colors.purple.shade200,
+      ],
+    );
+    super.render(canvas);
+  }
+
 //Ataca ao ver
   @override
   void update(double dt) {
@@ -44,7 +63,7 @@ class NecroEnemy extends SimpleEnemy
             closePlayer: (player) {
               simpleAttackMelee(
                 damage: totalCoins == 20 ? 30 : 20,
-                size: Vector2(tileSize, tileSize),
+                size: Vector2.all(tileSize),
                 withPush: true,
                 animationRight: NecroEnemySpriteSheet.atackRight,
               );
@@ -58,6 +77,8 @@ class NecroEnemy extends SimpleEnemy
         },
         radiusVision: tileSize * 3,
       );
+    } if (totalCoins == 25) {
+      canMove = false;
     }
     super.update(dt);
   }
@@ -72,7 +93,6 @@ class NecroEnemy extends SimpleEnemy
         size: Vector2.all(tileSize),
       ),
     );
-    canMove = false;
     removeFromParent();
     super.die();
   }
