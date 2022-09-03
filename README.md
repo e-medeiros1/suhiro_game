@@ -25,17 +25,38 @@
       <img src="https://user-images.githubusercontent.com/73318684/188041632-d2cd1b60-dbe8-4669-bb83-45daf226ab4e.png" width="750" alt="Resultado"/>
 </p>  
 
+<h2> Dia 3 </h2>
+<p >
+  <h4>Resumo:</h4>
+  Adciona moedas, lógica de pontuação, mais inimigos, ataque do herói</br>  
+  Caixa de diálogos com instruções, AlerteDialog para início, reinício e fim de jogo</br>
+</p>  
+
+<h2> Resultado </h2>  
+
+<p>
+      <img src="https://user-images.githubusercontent.com/73318684/188274100-39cf7f78-8d17-43ce-86a3-6323cc1b8e05.jpg" width="750" alt="Resultado"/>
+</p>  
+
+<h2> Dia 4 </h2>
+<p >
+  <h4>Resumo:</h4>
+  Correção de alguns bugs</br>  
+  Refatoração do código</br>
+</p>  
+
 
 
 
 
 <h2> Como usar </h2>
+<h3> Disponível para windows e android </h3>
 
    ```
    - Com o git instalado no computador, clone o repositório usando o:
-   $ git clone https://github.com/e-medeiros1/pacman_game.git 
+   $ git clone https://github.com/e-medeiros1/suhiro_game.git 
    - Entre no diretório com:
-   $ cd .\pacman_game
+   $ cd .\suhiro_game
    - Rode os seguintes comando antes: 
    $ flutter clean  
    $ flutter pub get  
