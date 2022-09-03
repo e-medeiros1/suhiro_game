@@ -61,7 +61,6 @@ class Board extends GameDecoration with TapGesture {
           ),
         ),
       ],
-      // padding: const EdgeInsets.only(left: 160, right: 50),
     );
   }
 }

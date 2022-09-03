@@ -23,13 +23,15 @@ class MyGameController extends GameComponent {
                   onPressed: () {
                     _goHome();
                   },
-                  child: const Text('Voltar ao menu principal'),
+                  child: const Text('Voltar ao menu principal',
+                      style: TextStyle(fontSize: 14, color: Colors.black)),
                 ),
                 TextButton(
                   onPressed: () {
                     _goStage();
                   },
-                  child: const Text('Jogar novamente'),
+                  child: const Text('Jogar novamente',
+                      style: TextStyle(fontSize: 14, color: Colors.orange)),
                 )
               ],
             );
@@ -51,7 +53,8 @@ class MyGameController extends GameComponent {
                   onPressed: () {
                     _goStage();
                   },
-                  child: const Text('Tentar novamente'),
+                  child: const Text('Tentar novamente',
+                      style: TextStyle(fontSize: 14, color: Colors.orange)),
                 )
               ],
             );

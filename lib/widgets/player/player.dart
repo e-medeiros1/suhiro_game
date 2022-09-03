@@ -7,12 +7,13 @@ import 'package:pacman_game/widgets/player/player_sprite_sheet.dart';
 import 'dart:io' show Platform;
 
 const tileSize = BasicValues.TILE_SIZE;
+bool playerCanMove = true;
 
 class GamePlayer extends SimplePlayer with ObjectCollision {
   GamePlayer({required Vector2 position})
       : super(
           position: position,
-          speed: Platform.isWindows ? tileSize * 6 : tileSize * 3,
+          speed: Platform.isWindows ? tileSize * 5 : tileSize * 3,
           size: Vector2(tileSize, tileSize),
           life: 120,
           animation: SimpleDirectionAnimation(
@@ -52,6 +53,7 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   //Receive damage
   @override
   void receiveDamage(AttackFromEnum attacker, double damage, identify) {
+    playerCanMove = false;
     showDamage(
       -damage,
       direction: DirectionTextDamage.RANDOM,
@@ -66,30 +68,35 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   @override
   void joystickAction(JoystickActionEvent event) {
     if (event.id == 0 && event.event == ActionEvent.DOWN) {
-      _executeAttack();
-    } else if (event.event == ActionEvent.DOWN &&
-        (event.id == 1 || event.id == LogicalKeyboardKey.space.keyId)) {
+      playerCanMove = false;
       _executeAttack();
     }
+    if (event.event == ActionEvent.DOWN &&
+        (event.id == 1 || event.id == LogicalKeyboardKey.space.keyId)) {
+      playerCanMove = false;
+      _executeAttack();
+    }
+
     super.joystickAction(event);
   }
 
   void _executeAttack() {
-    if (totalCoins == 11) {
+    playerCanMove = false;
+    if (totalCoins > 10) {
       simpleAttackMelee(
         damage: 20,
         sizePush: tileSize - 6,
         animationRight: PlayerSpriteSheet.atackRight,
         size: Vector2.all(tileSize * 0.8),
       );
-    } else if (totalCoins == 21) {
+    } else if (totalCoins > 20) {
       simpleAttackMelee(
         damage: 20,
         sizePush: tileSize - 6,
         animationRight: PlayerSpriteSheet.atackRight,
         size: Vector2.all(tileSize * 1.2),
       );
-    } else if (totalCoins == 26) {
+    } else if (totalCoins > 25) {
       simpleAttackMelee(
         damage: 30,
         sizePush: tileSize - 6,

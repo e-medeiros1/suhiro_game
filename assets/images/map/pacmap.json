@@ -596,17 +596,6 @@
                  "y":224
                 }, 
                 {
-                 "class":"above",
-                 "height":10,
-                 "id":95,
-                 "name":"board",
-                 "rotation":0,
-                 "visible":true,
-                 "width":11.6666666666667,
-                 "x":418,
-                 "y":321.333333333334
-                }, 
-                {
                  "class":"",
                  "height":16,
                  "id":96,
@@ -759,6 +748,17 @@
                  "width":8,
                  "x":179,
                  "y":299.5
+                }, 
+                {
+                 "class":"",
+                 "height":8,
+                 "id":116,
+                 "name":"board",
+                 "rotation":0,
+                 "visible":true,
+                 "width":8,
+                 "x":420,
+                 "y":322.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -767,7 +767,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":116,
+ "nextobjectid":117,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.1",

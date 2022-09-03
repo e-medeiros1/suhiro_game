@@ -35,18 +35,20 @@ class _MapRenderState extends State<MapRender> implements GameListener {
         BasicValues.OVERLAY_KEY: ((context, game) =>
             PlayerInterface(game: game)),
       },
-//Camera
+      //Camera
       cameraConfig: CameraConfig(
         smoothCameraEnabled: true,
         moveOnlyMapArea: true,
         zoom: Platform.isWindows ? 2.0 : 2.5,
-        sizeMovementWindow: Vector2(tileSize * 30, tileSize * 5),
+        sizeMovementWindow: Platform.isWindows
+            ? Vector2(tileSize * 25, tileSize * 5)
+            : Vector2(tileSize * 15, tileSize * 5),
       ),
       components: [MyGameController()],
       initialActiveOverlays: const [
         BasicValues.OVERLAY_KEY,
       ],
-//Joystic
+      //Joystic
       joystick: Joystick(
         keyboardConfig: KeyboardConfig(
             keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
@@ -54,7 +56,6 @@ class _MapRenderState extends State<MapRender> implements GameListener {
           spriteBackgroundDirectional: Sprite.load('joystick_background.png'),
           spriteKnobDirectional: Sprite.load('joystick_knob.png'),
           size: 100,
-          // color: Colors.blueGrey.shade800,
         ),
         actions: [
           JoystickAction(
@@ -66,7 +67,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
           ),
         ],
       ),
-//Map Render
+      //Map Render
       map: WorldMapByTiled(
         'map/pacmap.json',
         objectsBuilder: {
@@ -76,11 +77,11 @@ class _MapRenderState extends State<MapRender> implements GameListener {
           'board': (properties) => Board(position: properties.position),
         },
       ),
-//Player
+      //Player
       player: GamePlayer(
         position: Vector2(tileSize * 25, tileSize * 20),
       ),
-//Lighting
+      //Lighting
       lightingColorGame: Colors.black.withOpacity(0.15),
     );
   }

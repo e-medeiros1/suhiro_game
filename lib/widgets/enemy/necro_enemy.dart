@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pacman_game/utils/basic_values.dart';
 import 'package:pacman_game/widgets/coins/coins.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy_sprite_sheet.dart';
+import 'dart:io' show Platform;
 
 const tileSize = BasicValues.TILE_SIZE;
 bool canMove = true;
@@ -12,7 +13,7 @@ class NecroEnemy extends SimpleEnemy
   NecroEnemy({required Vector2 position})
       : super(
           position: position,
-          speed: totalCoins == 21 ? 50 : 40,
+          speed: Platform.isWindows ? 60 : 40,
           size: Vector2(tileSize, tileSize),
           animation: SimpleDirectionAnimation(
             idleRight: NecroEnemySpriteSheet.enemyIdleRight,
@@ -75,7 +76,7 @@ class NecroEnemy extends SimpleEnemy
           seeAndMoveToPlayer(
             //Quando tiver próximo do player, faz:
             closePlayer: (player) {
-              if (totalCoins >= 21) {
+              if (totalCoins > 20) {
                 simpleAttackMelee(
                   damage: 30,
                   size: Vector2.all(tileSize),
@@ -101,7 +102,7 @@ class NecroEnemy extends SimpleEnemy
         radiusVision: tileSize * 3,
       );
     }
-    if (totalCoins == 26) {
+    if (totalCoins > 26) {
       canMove = false;
     }
     super.update(dt);
