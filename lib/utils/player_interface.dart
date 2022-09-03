@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:pacman_game/widgets/coins/coins.dart';

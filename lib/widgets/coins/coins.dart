@@ -7,7 +7,7 @@ import 'package:pacman_game/widgets/player/player.dart';
 
 int totalCoins = 1;
 
-StreamController totalScore = StreamController();
+StreamController totalScore = StreamController<int>.broadcast();
 
 class Coins extends GameDecoration with Sensor {
   Coins({required Vector2 position})
@@ -28,7 +28,6 @@ class Coins extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     if (component is GamePlayer) {
       totalScore.sink.add(totalCoins++);
-      print(totalCoins);
     } else if (component is NecroEnemy) {}
     removeFromParent();
   }

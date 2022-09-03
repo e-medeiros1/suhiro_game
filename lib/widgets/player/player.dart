@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:pacman_game/utils/basic_values.dart';
 import 'package:pacman_game/widgets/coins/coins.dart';
 import 'package:pacman_game/widgets/player/player_sprite_sheet.dart';
+import 'dart:io' show Platform;
 
 const tileSize = BasicValues.TILE_SIZE;
 
@@ -11,7 +12,7 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   GamePlayer({required Vector2 position})
       : super(
           position: position,
-          speed: tileSize * 4,
+          speed: Platform.isWindows ? tileSize * 6 : tileSize * 3,
           size: Vector2(tileSize, tileSize),
           life: 120,
           animation: SimpleDirectionAnimation(
@@ -52,10 +53,10 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   @override
   void receiveDamage(AttackFromEnum attacker, double damage, identify) {
     showDamage(
-      damage,
+      -damage,
       direction: DirectionTextDamage.RANDOM,
       config: const TextStyle(
-        fontSize: 5,
+        fontSize: 5.5,
         color: Colors.white,
       ),
     );
@@ -66,8 +67,7 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   void joystickAction(JoystickActionEvent event) {
     if (event.id == 0 && event.event == ActionEvent.DOWN) {
       _executeAttack();
-    }
-    if (event.event == ActionEvent.DOWN &&
+    } else if (event.event == ActionEvent.DOWN &&
         (event.id == 1 || event.id == LogicalKeyboardKey.space.keyId)) {
       _executeAttack();
     }
@@ -75,12 +75,28 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   }
 
   void _executeAttack() {
-    simpleAttackMelee(
-      damage: totalCoins == 10 ? 30 : 20,
-      sizePush: totalCoins == 15 ? tileSize + 4 : tileSize,
-      animationRight: PlayerSpriteSheet.atackRight,
-      size: Vector2.all(totalCoins == 25 ? tileSize * 1.5 : tileSize * 0.8),
-    );
+    if (totalCoins == 11) {
+      simpleAttackMelee(
+        damage: 20,
+        sizePush: tileSize - 6,
+        animationRight: PlayerSpriteSheet.atackRight,
+        size: Vector2.all(tileSize * 0.8),
+      );
+    } else if (totalCoins == 21) {
+      simpleAttackMelee(
+        damage: 20,
+        sizePush: tileSize - 6,
+        animationRight: PlayerSpriteSheet.atackRight,
+        size: Vector2.all(tileSize * 1.2),
+      );
+    } else if (totalCoins == 26) {
+      simpleAttackMelee(
+        damage: 30,
+        sizePush: tileSize - 6,
+        animationRight: PlayerSpriteSheet.atackRight,
+        size: Vector2.all(tileSize * 1.5),
+      );
+    }
   }
 
 //Die

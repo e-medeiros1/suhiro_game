@@ -10,7 +10,6 @@
  "tileheight":16,
  "tiles":[
         {
-         "class":"above",
          "id":12,
          "objectgroup":
             {
@@ -52,7 +51,6 @@
          "objectgroup":
             {
              "draworder":"index",
-             "id":2,
              "name":"",
              "objects":[
                     {

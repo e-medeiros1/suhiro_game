@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pacman_game/screens/map_render/map_render.dart';
+import 'package:pacman_game/utils/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'PressStart2P'),
       debugShowCheckedModeBanner: false,
-      home: const MapRender(),
+      home: const HomePage(),
     );
   }
 }

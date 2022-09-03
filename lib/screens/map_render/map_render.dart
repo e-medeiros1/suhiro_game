@@ -8,6 +8,7 @@ import 'package:pacman_game/widgets/decoration/board.dart';
 import 'package:pacman_game/widgets/decoration/bonfire.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
 import 'package:pacman_game/widgets/player/player.dart';
+import 'dart:io' show Platform;
 
 class MapRender extends StatefulWidget {
   const MapRender({Key? key}) : super(key: key);
@@ -38,8 +39,8 @@ class _MapRenderState extends State<MapRender> implements GameListener {
       cameraConfig: CameraConfig(
         smoothCameraEnabled: true,
         moveOnlyMapArea: true,
-        zoom: 2.3,
-        sizeMovementWindow: Vector2(tileSize * 5, tileSize * 5),
+        zoom: Platform.isWindows ? 2.0 : 2.5,
+        sizeMovementWindow: Vector2(tileSize * 30, tileSize * 5),
       ),
       components: [MyGameController()],
       initialActiveOverlays: const [
@@ -52,7 +53,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
         directional: JoystickDirectional(
           spriteBackgroundDirectional: Sprite.load('joystick_background.png'),
           spriteKnobDirectional: Sprite.load('joystick_knob.png'),
-          size: 110,
+          size: 100,
           // color: Colors.blueGrey.shade800,
         ),
         actions: [

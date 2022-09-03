@@ -12,7 +12,7 @@ class NecroEnemy extends SimpleEnemy
   NecroEnemy({required Vector2 position})
       : super(
           position: position,
-          speed: totalCoins == 20 ? 50 : 40,
+          speed: totalCoins == 21 ? 50 : 40,
           size: Vector2(tileSize, tileSize),
           animation: SimpleDirectionAnimation(
             idleRight: NecroEnemySpriteSheet.enemyIdleRight,
@@ -52,6 +52,20 @@ class NecroEnemy extends SimpleEnemy
     super.render(canvas);
   }
 
+  //Receive damage
+  @override
+  void receiveDamage(AttackFromEnum attacker, double damage, identify) {
+    showDamage(
+      -damage,
+      direction: DirectionTextDamage.RANDOM,
+      config: TextStyle(
+        fontSize: 5.5,
+        color: Colors.purple.shade50,
+      ),
+    );
+    super.receiveDamage(attacker, damage, identify);
+  }
+
 //Ataca ao ver
   @override
   void update(double dt) {
@@ -61,12 +75,21 @@ class NecroEnemy extends SimpleEnemy
           seeAndMoveToPlayer(
             //Quando tiver próximo do player, faz:
             closePlayer: (player) {
-              simpleAttackMelee(
-                damage: totalCoins == 20 ? 30 : 20,
-                size: Vector2.all(tileSize),
-                withPush: true,
-                animationRight: NecroEnemySpriteSheet.atackRight,
-              );
+              if (totalCoins >= 21) {
+                simpleAttackMelee(
+                  damage: 30,
+                  size: Vector2.all(tileSize),
+                  withPush: true,
+                  animationRight: NecroEnemySpriteSheet.atackRight,
+                );
+              } else {
+                simpleAttackMelee(
+                  damage: 20,
+                  size: Vector2.all(tileSize),
+                  withPush: false,
+                  animationRight: NecroEnemySpriteSheet.atackRight,
+                );
+              }
             },
             radiusVision: tileSize * 3,
             margin: 4,
@@ -77,7 +100,8 @@ class NecroEnemy extends SimpleEnemy
         },
         radiusVision: tileSize * 3,
       );
-    } if (totalCoins == 25) {
+    }
+    if (totalCoins == 26) {
       canMove = false;
     }
     super.update(dt);
