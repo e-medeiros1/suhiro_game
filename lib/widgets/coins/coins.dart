@@ -1,10 +1,13 @@
+import 'dart:async';
+
 import 'package:bonfire/bonfire.dart';
 import 'package:pacman_game/widgets/coins/coins_sprite_sheet.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
 import 'package:pacman_game/widgets/player/player.dart';
 
-const coinValue = 1;
-int totalCoins = 0;
+int totalCoins = 1;
+
+StreamController totalScore = StreamController();
 
 class Coins extends GameDecoration with Sensor {
   Coins({required Vector2 position})
@@ -24,7 +27,8 @@ class Coins extends GameDecoration with Sensor {
   @override
   void onContact(GameComponent component) {
     if (component is GamePlayer) {
-      totalCoins++;
+      totalScore.sink.add(totalCoins++);
+      print(totalCoins);
     } else if (component is NecroEnemy) {}
     removeFromParent();
   }
