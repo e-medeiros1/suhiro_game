@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 class NecroEnemySpriteSheet {
+//Idle
   static Future<SpriteAnimation> get enemyIdleLeft => SpriteAnimation.load(
         'necromancer_.png',
         SpriteAnimationData.sequenced(
@@ -19,6 +20,8 @@ class NecroEnemySpriteSheet {
           texturePosition: Vector2(0, 0),
         ),
       );
+      
+//Run      
   static Future<SpriteAnimation> get enemyRunLeft => SpriteAnimation.load(
         'necromancer_.png',
         SpriteAnimationData.sequenced(
@@ -48,14 +51,7 @@ class NecroEnemySpriteSheet {
         ),
       );
 
-  static Future<SpriteAnimation> get atackLeft => SpriteAnimation.load(
-        'atack_effect_left.png',
-        SpriteAnimationData.sequenced(
-          amount: 3,
-          stepTime: 0.1,
-          textureSize: Vector2(16, 16),
-        ),
-      );
+//Atack
   static Future<SpriteAnimation> get atackRight => SpriteAnimation.load(
         'atack_effect_right.png',
         SpriteAnimationData.sequenced(
@@ -64,20 +60,5 @@ class NecroEnemySpriteSheet {
           textureSize: Vector2(16, 16),
         ),
       );
-  static Future<SpriteAnimation> get atackUp => SpriteAnimation.load(
-        'atack_effect_up.png',
-        SpriteAnimationData.sequenced(
-          amount: 3,
-          stepTime: 0.1,
-          textureSize: Vector2(16, 16),
-        ),
-      );
-  static Future<SpriteAnimation> get atackDown => SpriteAnimation.load(
-        'atack_effect_down.png',
-        SpriteAnimationData.sequenced(
-          amount: 3,
-          stepTime: 0.1,
-          textureSize: Vector2(16, 16),
-        ),
-      );
+
 }

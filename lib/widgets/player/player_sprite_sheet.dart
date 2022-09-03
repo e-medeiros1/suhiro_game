@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:pacman_game/widgets/player/player.dart';
 
 class PlayerSpriteSheet {
+ //Idle 
   static Future<SpriteAnimation> get playerIdleLeft => SpriteAnimation.load(
         'fHero_.png',
         SpriteAnimationData.sequenced(
@@ -20,6 +21,7 @@ class PlayerSpriteSheet {
           texturePosition: Vector2(0, 0),
         ),
       );
+//Run      
   static Future<SpriteAnimation> get playerRunLeft => SpriteAnimation.load(
         'fHero_.png',
         SpriteAnimationData.sequenced(
@@ -39,25 +41,15 @@ class PlayerSpriteSheet {
         ),
       );
 
-  //ReceiveDamage
-  // static Future<SpriteAnimation> get receiveDamageLeft => SpriteAnimation.load(
-  //       'fHero_.png',
-  //       SpriteAnimationData.sequenced(
-  //         amount: 4,
-  //         stepTime: 0.15,
-  //         textureSize: Vector2(24, 24),
-  //         texturePosition: Vector2(96, 24),
-  //       ),
-  //     );
-  // static Future<SpriteAnimation> get receiveDamageRight => SpriteAnimation.load(
-  //       'fHero_.png',
-  //       SpriteAnimationData.sequenced(
-  //         amount: 4,
-  //         stepTime: 0.15,
-  //         textureSize: Vector2(24, 24),
-  //         texturePosition: Vector2(0, 96),
-  //       ),
-  //     );
+  //Atack
+  static Future<SpriteAnimation> get atackRight => SpriteAnimation.load(
+        'atack_effect_right.png',
+        SpriteAnimationData.sequenced(
+          amount: 3,
+          stepTime: 0.1,
+          textureSize: Vector2(16, 16),
+        ),
+      );
 
   //Dying
   static Future<SpriteAnimation> get dyingLeft => SpriteAnimation.load(
