@@ -1,4 +1,13 @@
 <h2 align="center"> Seleção de Desenvolvedor de Software - Escribo - Teste técnico 02 </h2>  
+
+<h3> Instruções e dicas </h3>
+
+Pegue 30 moedas e mate todos os inimigos para vencer  
+<h4> Bônus especiais:  </h4>
+<p>10 moedas = Ganhe a habilidade de atacar o inimigo </p>    
+<p>20 moedas = Aumente seu dano </p>   
+<p>25 moedas = Paralise todos os inimigos e ganhe mais dano </p>    
+
 <h2> Dia 1 </h2>
 <p >
   <h4>Resumo:</h4>
