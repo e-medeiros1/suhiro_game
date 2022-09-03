@@ -20,6 +20,8 @@
 
 <h3> Instruções e dicas </h3>
 
+No desktop, use a barra de espaço para atacar  
+
 Pegue 30 moedas e mate todos os inimigos para vencer  
 <h4> Bônus especiais:  </h4>
 <p>10 moedas = Ganhe a habilidade de atacar o inimigo </p>    
