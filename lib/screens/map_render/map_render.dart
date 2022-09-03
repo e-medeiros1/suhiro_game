@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:pacman_game/utils/basic_values.dart';
 import 'package:pacman_game/utils/game_controller.dart';
+import 'package:pacman_game/utils/player_interface.dart';
 import 'package:pacman_game/widgets/coins/coins.dart';
 import 'package:pacman_game/widgets/decoration/board.dart';
 import 'package:pacman_game/widgets/decoration/bonfire.dart';
@@ -15,13 +16,12 @@ class MapRender extends StatefulWidget {
   State<MapRender> createState() => _MapRenderState();
 }
 
-class _MapRenderState extends State<MapRender> implements GameListener{
-
-  late  GameController controller;
+class _MapRenderState extends State<MapRender> implements GameListener {
+  late GameController controller;
 
   @override
   void initState() {
-  controller = GameController()..addListener(this);
+    controller = GameController()..addListener(this);
     super.initState();
   }
 
@@ -30,6 +30,10 @@ class _MapRenderState extends State<MapRender> implements GameListener{
     const tileSize = BasicValues.TILE_SIZE;
     return BonfireWidget(
       gameController: controller,
+      overlayBuilderMap: {
+        BasicValues.OVERLAY_KEY: ((context, game) =>
+            PlayerInterface(game: game)),
+      },
 //Camera
       cameraConfig: CameraConfig(
         smoothCameraEnabled: true,
@@ -37,9 +41,9 @@ class _MapRenderState extends State<MapRender> implements GameListener{
         zoom: 2.3,
         sizeMovementWindow: Vector2(tileSize * 5, tileSize * 5),
       ),
-           components: [
-        MyGameController(),
-        
+      components: [MyGameController()],
+      initialActiveOverlays: const [
+        BasicValues.OVERLAY_KEY,
       ],
 //Joystic
       joystick: Joystick(
@@ -79,14 +83,10 @@ class _MapRenderState extends State<MapRender> implements GameListener{
       lightingColorGame: Colors.black.withOpacity(0.15),
     );
   }
-  
+
   @override
-  void changeCountLiveEnemies(int count) {
-    // TODO: implement changeCountLiveEnemies
-  }
-  
+  void changeCountLiveEnemies(int count) {}
+
   @override
-  void updateGame() {
-    // TODO: implement updateGame
-  }
+  void updateGame() {}
 }
