@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:pacman_game/widgets/coins/coins_sprite_sheet.dart';
+import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
 import 'package:pacman_game/widgets/player/player.dart';
 
 const coinValue = 1;
@@ -24,7 +25,7 @@ class Coins extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     if (component is GamePlayer) {
       totalCoins++;
-    }
+    } else if (component is NecroEnemy) {}
     removeFromParent();
   }
 
