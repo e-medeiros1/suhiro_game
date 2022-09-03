@@ -11,7 +11,7 @@ class MyGameController extends GameComponent {
   @override
   void update(double dt) {
     if (checkInterval('end game', 500, dt)) {
-      if ((gameRef.livingEnemies().isEmpty && totalCoins == 30) && !endGame) {
+      if ((gameRef.livingEnemies().isEmpty && totalCoins == 31) && !endGame) {
         endGame = true;
         showDialog(
           context: context,

@@ -41,7 +41,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
         moveOnlyMapArea: true,
         zoom: Platform.isWindows ? 2.0 : 2.5,
         sizeMovementWindow: Platform.isWindows
-            ? Vector2(tileSize * 25, tileSize * 5)
+            ? Vector2(tileSize * 35, tileSize * 5)
             : Vector2(tileSize * 15, tileSize * 5),
       ),
       components: [MyGameController()],
