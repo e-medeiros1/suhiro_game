@@ -1,18 +1,19 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pacman_game/utils/basic_values.dart';
+import 'package:pacman_game/widgets/coins/coins.dart';
 import 'package:pacman_game/widgets/player/player_sprite_sheet.dart';
 
 const tileSize = BasicValues.TILE_SIZE;
 
 class GamePlayer extends SimplePlayer with ObjectCollision {
-  bool canMove = true;
-
   GamePlayer({required Vector2 position})
       : super(
           position: position,
-          speed: 80,
+          speed: tileSize * 4,
           size: Vector2(tileSize, tileSize),
+          life: 120,
           animation: SimpleDirectionAnimation(
             idleRight: PlayerSpriteSheet.playerIdleRight,
             idleLeft: PlayerSpriteSheet.playerIdleLeft,
@@ -20,6 +21,7 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
             runLeft: PlayerSpriteSheet.playerRunLeft,
           ),
         ) {
+//CollisionConfig
     setupCollision(
       CollisionConfig(
         collisions: [
@@ -43,7 +45,6 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
       align: const Offset(3, -5),
       borderRadius: BorderRadius.circular(3),
     );
-
     super.render(canvas);
   }
 
@@ -56,12 +57,33 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
       config: const TextStyle(
         fontSize: 5,
         color: Colors.white,
-        fontFamily: 'Normal',
       ),
     );
     super.receiveDamage(attacker, damage, identify);
   }
 
+  @override
+  void joystickAction(JoystickActionEvent event) {
+    if (event.id == 0 && event.event == ActionEvent.DOWN) {
+      _executeAttack();
+    }
+    if (event.event == ActionEvent.DOWN &&
+        (event.id == 1 || event.id == LogicalKeyboardKey.space.keyId)) {
+      _executeAttack();
+    }
+    super.joystickAction(event);
+  }
+
+  void _executeAttack() {
+    simpleAttackMelee(
+      damage: totalCoins == 10 ? 30 : 20,
+      sizePush: totalCoins == 15 ? tileSize + 4 : tileSize,
+      animationRight: PlayerSpriteSheet.atackRight,
+      size: Vector2.all(totalCoins == 25 ? tileSize * 1.5 : tileSize * 0.8),
+    );
+  }
+
+//Die
   @override
   void die() async {
     if (lastDirectionHorizontal == Direction.left) {
@@ -80,6 +102,9 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
         size: Vector2.all(tileSize),
       ),
     );
+    totalCoins = 0;
+    removeFromParent();
+
     super.die();
   }
 }
