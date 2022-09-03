@@ -51,6 +51,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
       //Joystic
       joystick: Joystick(
         keyboardConfig: KeyboardConfig(
+            enable: Platform.isWindows ? true : false,
             keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
         directional: JoystickDirectional(
           spriteBackgroundDirectional: Sprite.load('joystick_background.png'),
@@ -58,13 +59,14 @@ class _MapRenderState extends State<MapRender> implements GameListener {
           size: 100,
         ),
         actions: [
-          JoystickAction(
-            actionId: 0,
-            sprite: Sprite.load('joystick_atack.png'),
-            spritePressed: Sprite.load('joystick_atack_selected.png'),
-            size: 80,
-            margin: const EdgeInsets.only(bottom: 50, right: 80),
-          ),
+          if (Platform.isAndroid)
+            JoystickAction(
+              actionId: 0,
+              sprite: Sprite.load('joystick_atack.png'),
+              spritePressed: Sprite.load('joystick_atack_selected.png'),
+              size: 80,
+              margin: const EdgeInsets.only(bottom: 50, right: 80),
+            ),
         ],
       ),
       //Map Render

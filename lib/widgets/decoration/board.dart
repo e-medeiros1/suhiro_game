@@ -23,7 +23,7 @@ class Board extends GameDecoration with TapGesture {
                 style: TextStyle(fontFamily: 'PressStart2P')),
             const TextSpan(
                 text:
-                    'Colete todos os tesouros do mapa enquanto luta contra monstros.\n',
+                    'Colete o máximo de moedas que conseguir e mate todos os monstros para vencer.\n',
                 style: TextStyle(fontFamily: 'PressStart2P')),
           ],
           personSayDirection: PersonSayDirection.LEFT,
@@ -36,8 +36,14 @@ class Board extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-                text: 'Boa sorte! Você vai precisar...',
-                style: TextStyle(fontFamily: 'PressStart2P')),
+              text:
+                  'Quanto mais coletar, mais forte ficará! Seus inimigos não gostarão nada disso...\n',
+              style: TextStyle(fontFamily: 'PressStart2P'),
+            ),
+            const TextSpan(
+              text: 'Boa sorte, nós vamos precisar!',
+              style: TextStyle(fontFamily: 'PressStart2P'),
+            ),
           ],
           personSayDirection: PersonSayDirection.LEFT,
           person: SizedBox(
@@ -49,7 +55,7 @@ class Board extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
-              text: 'Arhg... Vai mesmo!',
+              text: 'Aaarhg... Vão mesmo!',
               style: TextStyle(fontFamily: 'PressStart2P'),
             ),
           ],

@@ -13,7 +13,7 @@ class NecroEnemy extends SimpleEnemy
   NecroEnemy({required Vector2 position})
       : super(
           position: position,
-          speed: Platform.isWindows ? 60 : 40,
+          speed: Platform.isWindows ? 60 : 30,
           size: Vector2(tileSize, tileSize),
           animation: SimpleDirectionAnimation(
             idleRight: NecroEnemySpriteSheet.enemyIdleRight,

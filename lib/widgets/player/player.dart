@@ -85,21 +85,21 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
     if (totalCoins > 10) {
       simpleAttackMelee(
         damage: 20,
-        sizePush: tileSize - 6,
+        sizePush: tileSize - 12,
         animationRight: PlayerSpriteSheet.atackRight,
         size: Vector2.all(tileSize * 0.8),
       );
     } else if (totalCoins > 20) {
       simpleAttackMelee(
         damage: 20,
-        sizePush: tileSize - 6,
+        sizePush: tileSize - 10,
         animationRight: PlayerSpriteSheet.atackRight,
         size: Vector2.all(tileSize * 1.2),
       );
     } else if (totalCoins > 25) {
       simpleAttackMelee(
         damage: 30,
-        sizePush: tileSize - 6,
+        sizePush: tileSize - 8,
         animationRight: PlayerSpriteSheet.atackRight,
         size: Vector2.all(tileSize * 1.5),
       );
