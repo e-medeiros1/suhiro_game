@@ -50,21 +50,6 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
     super.render(canvas);
   }
 
-  //Receive damage
-  @override
-  void receiveDamage(AttackFromEnum attacker, double damage, identify) {
-    playerCanMove = false;
-    showDamage(
-      -damage,
-      direction: DirectionTextDamage.RANDOM,
-      config: const TextStyle(
-        fontSize: 5.5,
-        color: Colors.white,
-      ),
-    );
-    super.receiveDamage(attacker, damage, identify);
-  }
-
   @override
   void joystickAction(JoystickActionEvent event) {
     if (event.id == 0 && event.event == ActionEvent.DOWN) {
