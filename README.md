@@ -11,7 +11,8 @@
 
 <h2> Versão demo Android </h2>  
 
-[Suhiro.zip](https://github.com/e-medeiros1/suhiro_game/files/9483324/Suhiro.zip)
+[Suhiro_v1.0.1.zip](https://github.com/e-medeiros1/suhiro_game/files/9483633/Suhiro_v1.0.1.zip)
+
 
 
 <h2> Versão demo Desktop </h2>  
