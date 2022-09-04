@@ -26,6 +26,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     const tileSize = BasicValues.TILE_SIZE;
@@ -37,12 +38,11 @@ class _MapRenderState extends State<MapRender> implements GameListener {
       },
       //Camera
       cameraConfig: CameraConfig(
-        smoothCameraEnabled: true,
         moveOnlyMapArea: true,
-        zoom: Platform.isWindows ? 2.0 : 2.5,
+        zoom: Platform.isWindows ? 2.1 : 1.7,
         sizeMovementWindow: Platform.isWindows
-            ? Vector2(tileSize * 35, tileSize * 5)
-            : Vector2(tileSize * 15, tileSize * 5),
+            ? Vector2(tileSize * 30, tileSize * 5)
+            : Vector2(tileSize * 10, tileSize * 5),
       ),
       components: [MyGameController()],
       initialActiveOverlays: const [

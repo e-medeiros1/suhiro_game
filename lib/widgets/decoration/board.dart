@@ -36,6 +36,19 @@ class Board extends GameDecoration with TapGesture {
         Say(
           text: [
             const TextSpan(
+                text: 'Você só poderá atacar após coletar 10 moedas, então tome cuidado!\n',
+                style: TextStyle(fontFamily: 'PressStart2P')),
+          ],
+          personSayDirection: PersonSayDirection.LEFT,
+          person: SizedBox(
+            width: 100,
+            height: 100,
+            child: PlayerSpriteSheet.playerIdleRight.asWidget(),
+          ),
+        ),
+        Say(
+          text: [
+            const TextSpan(
               text:
                   'Quanto mais coletar, mais forte ficará! Seus inimigos não gostarão nada disso...\n',
               style: TextStyle(fontFamily: 'PressStart2P'),
