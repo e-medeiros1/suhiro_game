@@ -28,7 +28,9 @@ class Coins extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     if (component is GamePlayer) {
       totalScore.sink.add(totalCoins++);
-    } else if (component is NecroEnemy) {}
+    } else if (component is NecroEnemy) {
+    }
+
     removeFromParent();
   }
 

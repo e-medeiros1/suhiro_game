@@ -9,13 +9,15 @@ import 'dart:io' show Platform;
 const tileSize = BasicValues.TILE_SIZE;
 bool playerCanMove = true;
 
+double life = 120;
+
 class GamePlayer extends SimplePlayer with ObjectCollision {
   GamePlayer({required Vector2 position})
       : super(
           position: position,
-          speed: Platform.isWindows ? tileSize * 5 : tileSize * 3,
+          speed: Platform.isWindows ? tileSize * 4.5 : tileSize * 2.8,
           size: Vector2(tileSize, tileSize),
-          life: 120,
+          life: life,
           animation: SimpleDirectionAnimation(
             idleRight: PlayerSpriteSheet.playerIdleRight,
             idleLeft: PlayerSpriteSheet.playerIdleLeft,
@@ -41,7 +43,7 @@ class GamePlayer extends SimplePlayer with ObjectCollision {
   void render(Canvas canvas) {
     drawDefaultLifeBar(
       canvas,
-      width: 10,
+      width: 12,
       borderWidth: 1,
       height: 1.5,
       align: const Offset(3, -5),
