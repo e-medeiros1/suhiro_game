@@ -81,19 +81,20 @@ class NecroEnemy extends SimpleEnemy
                   damage: 30,
                   size: Vector2.all(tileSize),
                   withPush: true,
-                  sizePush: tileSize - 10,
+                  sizePush: tileSize - 8,
                   animationRight: NecroEnemySpriteSheet.atackRight,
                 );
               } else {
                 simpleAttackMelee(
                   damage: 20,
                   size: Vector2.all(tileSize),
-                  withPush: false,
+                  sizePush: tileSize - 12,
+                  withPush: true,
                   animationRight: NecroEnemySpriteSheet.atackRight,
                 );
               }
             },
-            radiusVision: tileSize * 3,
+            radiusVision: tileSize * 4,
             margin: 4,
           );
         },

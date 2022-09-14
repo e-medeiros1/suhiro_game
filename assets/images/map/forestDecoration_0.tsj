@@ -122,7 +122,6 @@
             }
         }, 
         {
-         "class":"above",
          "id":56,
          "objectgroup":
             {
@@ -139,6 +138,31 @@
                      "width":8.27272727272727,
                      "x":3.72727272727273,
                      "y":6.45454545454546
+                    }],
+             "opacity":1,
+             "type":"objectgroup",
+             "visible":true,
+             "x":0,
+             "y":0
+            }
+        }, 
+        {
+         "id":57,
+         "objectgroup":
+            {
+             "draworder":"index",
+             "name":"",
+             "objects":[
+                    {
+                     "class":"",
+                     "height":6.27910685805423,
+                     "id":1,
+                     "name":"",
+                     "rotation":0,
+                     "visible":true,
+                     "width":8.29984051036683,
+                     "x":3.82881446039341,
+                     "y":5.63689526847422
                     }],
              "opacity":1,
              "type":"objectgroup",

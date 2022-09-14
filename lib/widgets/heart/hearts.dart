@@ -1,21 +1,14 @@
-import 'dart:async';
-
 import 'package:bonfire/bonfire.dart';
-import 'package:pacman_game/widgets/coins/coins_sprite_sheet.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
+import 'package:pacman_game/widgets/heart/heart_sprite_sheet.dart';
 import 'package:pacman_game/widgets/player/player.dart';
 
-int totalCoins = 1;
-
-StreamController totalScore = StreamController<int>.broadcast();
-
-class Coins extends GameDecoration with Sensor {
-  Coins({required Vector2 position})
+class Hearts extends GameDecoration with Sensor {
+  Hearts({required Vector2 position})
       : super.withAnimation(
-            animation: CoinSpriteSheet.coins,
+            animation: HeartSpriteSheet.heart,
             position: position,
-            size: Vector2(4, 4)) {
-    // call this method to configure sensor area.
+            size: Vector2(8, 8)) {
     setupSensorArea(areaSensor: [
       CollisionArea.rectangle(
         size: Vector2(10, 10),
@@ -27,8 +20,9 @@ class Coins extends GameDecoration with Sensor {
   @override
   void onContact(GameComponent component) {
     if (component is GamePlayer) {
-      totalScore.sink.add(totalCoins++);
+      gameRef.player?.addLife(20);
     } else if (component is NecroEnemy) {
+      gameRef.player?.addLife(0);
     }
 
     removeFromParent();
