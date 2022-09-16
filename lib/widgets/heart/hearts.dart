@@ -24,7 +24,6 @@ class Hearts extends GameDecoration with Sensor {
     } else if (component is NecroEnemy) {
       gameRef.player?.addLife(0);
     }
-
     removeFromParent();
   }
 

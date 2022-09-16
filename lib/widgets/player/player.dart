@@ -8,7 +8,6 @@ import 'dart:io' show Platform;
 
 const tileSize = BasicValues.TILE_SIZE;
 bool playerCanMove = true;
-
 double life = 120;
 
 class GamePlayer extends SimplePlayer with ObjectCollision {

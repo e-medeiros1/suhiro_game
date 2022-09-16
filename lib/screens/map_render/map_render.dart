@@ -49,7 +49,7 @@ class _MapRenderState extends State<MapRender> implements GameListener {
           //Camera
           cameraConfig: CameraConfig(
               moveOnlyMapArea: true,
-              zoom: Platform.isWindows ? 3.5 : 2,
+              zoom: Platform.isWindows ? 3.5 : 2.5,
               sizeMovementWindow: Vector2(sizeScreen / 6, tileSize * 5)),
           components: [MyGameController()],
           initialActiveOverlays: const [
