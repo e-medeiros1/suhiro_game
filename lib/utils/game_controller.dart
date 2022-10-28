@@ -50,7 +50,7 @@ class MyGameController extends GameComponent {
 
     Future<Widget> dialogDelay()  {
       return Future.delayed(
-          Duration(seconds: 1),
+          const Duration(seconds: 1),
           () => Scaffold(
                 backgroundColor: Colors.red.shade500.withOpacity(0.5),
                 body: Center(

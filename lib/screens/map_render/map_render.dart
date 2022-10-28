@@ -1,6 +1,6 @@
+import 'dart:io' show Platform;
 import 'dart:math';
 
-import 'package:bonfire/base/bonfire_game_interface.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:pacman_game/utils/basic_values.dart';
@@ -12,7 +12,6 @@ import 'package:pacman_game/widgets/decoration/bonfire.dart';
 import 'package:pacman_game/widgets/enemy/necro_enemy.dart';
 import 'package:pacman_game/widgets/heart/hearts.dart';
 import 'package:pacman_game/widgets/player/player.dart';
-import 'dart:io' show Platform;
 
 class MapRender extends StatefulWidget {
   const MapRender({Key? key}) : super(key: key);
